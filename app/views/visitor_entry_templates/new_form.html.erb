@@ -5,39 +5,25 @@
 
 <hr>
 
-<!-- Form visitor_entry start -->
 <form action="/create_visitor_entry" method="post">
-<!-- Form visitor_entry end -->
 
-  <!-- Label and input for visit_date start -->
   <div class="form-group">
     <label for="visit_date">
       Visit date
     </label>
 
-    <!-- Input for visit_date start -->
     <input type="text" id="visit_date" name="visit_date" class="form-control">
-    <!-- Input for visit_date end -->
   </div>
-  <!-- Label and input for visit_date end -->
 
-  <!-- Label and input for user_id start -->
-  <!-- Input for "user_id" start -->
   <input type="hidden" name="user_id" value="<%= current_user.id %>">
-  <!-- Input for "user_id" end -->
-  <!-- Label and input for user_id end -->
 
-  <!-- Label and input for book_id start -->
   <div class="form-group">
     <label for="book_id">
       Book
     </label>
 
-    <!-- Input for book_id start -->
     <%= select_tag(:book_id, options_from_collection_for_select(Book.all, :id, :name, @visitor_entry.book_id), :class => "form-control") %>
-    <!-- Input for book_id end -->
   </div>
-  <!-- Label and input for book_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create visitor entry

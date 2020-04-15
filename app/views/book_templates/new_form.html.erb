@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form book start -->
 <form action="/create_book" method="post">
-<!-- Form book end -->
 
-  <!-- Label and input for name start -->
   <div class="form-group">
     <label for="name">
       Name
     </label>
 
-    <!-- Input for name start -->
     <input type="text" id="name" name="name" class="form-control">
-    <!-- Input for name end -->
   </div>
-  <!-- Label and input for name end -->
 
-  <!-- Label and input for author_id start -->
   <div class="form-group">
     <label for="author_id">
       Author
     </label>
 
-    <!-- Input for author_id start -->
     <%= select_tag(:author_id, options_from_collection_for_select(User.all, :id, :email, @book.author_id), :class => "form-control") %>
-    <!-- Input for author_id end -->
   </div>
-  <!-- Label and input for author_id end -->
 
-  <!-- Label and input for publish_date start -->
   <div class="form-group">
     <label for="publish_date">
       Publish date
     </label>
 
-    <!-- Input for publish_date start -->
     <input type="text" id="publish_date" name="publish_date" class="form-control">
-    <!-- Input for publish_date end -->
   </div>
-  <!-- Label and input for publish_date end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create book

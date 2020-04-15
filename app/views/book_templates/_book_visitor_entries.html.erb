@@ -10,28 +10,22 @@
   <ul class="list-group list-group-flush">
     <% @book.visitor_entries.each do |visitor_entry| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/visitor_entries/<%= visitor_entry.id %>">
           <%= visitor_entry.visit_date %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <%if current_user == visitor_entry.user %>
           <a href="/delete_visitor_entry_from_book/<%= visitor_entry.id %>">
             Delete
           </a>
         <% end %>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="book_visitor_entries_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "book_templates/book_visitor_entries_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

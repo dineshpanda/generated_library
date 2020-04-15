@@ -5,45 +5,31 @@
 
 <hr>
 
-<!-- Form photo start -->
 <form action="/create_photo" method="post" enctype="multipart/form-data">
-<!-- Form photo end -->
 
-  <!-- Label and input for img start -->
   <div class="form-group">
     <label for="img">
       Img
     </label>
 
-    <!-- Input for img start -->
     <input type="file" id="img" name="img" class="form-control">
-    <!-- Input for img end -->
   </div>
-  <!-- Label and input for img end -->
 
-  <!-- Label and input for loc start -->
   <div class="form-group">
     <label for="loc">
       Loc
     </label>
 
-    <!-- Input for loc start -->
     <input type="text" id="loc" name="loc" class="form-control">
-    <!-- Input for loc end -->
   </div>
-  <!-- Label and input for loc end -->
 
-  <!-- Label and input for book_id start -->
   <div class="form-group">
     <label for="book_id">
       Book
     </label>
 
-    <!-- Input for book_id start -->
     <%= select_tag(:book_id, options_from_collection_for_select(Book.all, :id, :name, @photo.book_id), :class => "form-control") %>
-    <!-- Input for book_id end -->
   </div>
-  <!-- Label and input for book_id end -->
 
   <button class="btn btn-block btn-outline-secondary">
     Create photo

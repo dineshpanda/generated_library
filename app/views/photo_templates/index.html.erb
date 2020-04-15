@@ -10,21 +10,17 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "photo_templates/photos_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 <div class="row mb-3">
   <div class="col-md-12">
     <%= render partial: "photo_templates/all_photos_map" %>
   </div>
 </div>
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -62,25 +58,18 @@
 
       <% @photos.each do |photo| %>
       <tr>
-        <!-- Display photo.id start -->
         <td>
           <%= photo.id %>
         </td>
-        <!-- Display photo.id end -->
 
-        <!-- Display photo.img start -->
         <td>
           <img src='<%= photo.img %>' class='img-fluid'>
         </td>
-        <!-- Display photo.img end -->
 
-        <!-- Display photo.loc start -->
         <td>
           <%= photo.loc %>
         </td>
-        <!-- Display photo.loc end -->
 
-        <!-- Display photo.book_id start -->
         <td>
           <% if photo.book.present? %>
             <a href="/books/<%= photo.book.id %>">
@@ -88,19 +77,14 @@
             </a>
           <% end %>
         </td>
-        <!-- Display photo.book_id end -->
 
-        <!-- Display photo.created_at start -->
         <td>
           <%= time_ago_in_words(photo.created_at) %> ago
         </td>
-        <!-- Display photo.created_at end -->
 
-        <!-- Display photo.updated_at start -->
         <td>
           <%= time_ago_in_words(photo.updated_at) %> ago
         </td>
-        <!-- Display photo.updated_at end -->
 
         <td>
           <a href="/photos/<%= photo.id %>">

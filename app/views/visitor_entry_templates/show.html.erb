@@ -11,7 +11,6 @@
         </a>
       </div>
 
-      <!-- Edit link visitor_entry start -->
       <div class="col">
         <% if current_user == @visitor_entry.user %>
           <a href="/visitor_entries/<%= @visitor_entry.id %>/edit" class="btn btn-block btn-sm btn-outline-secondary">
@@ -19,9 +18,7 @@
           </a>
         <% end %>
       </div>
-      <!-- Edit link visitor_entry end -->
 
-      <!-- Delete link visitor_entry start -->
       <div class="col">
         <% if current_user == @visitor_entry.user %>
           <a href="/delete_visitor_entry/<%= @visitor_entry.id %>" class="btn btn-block btn-sm btn-outline-secondary">
@@ -29,23 +26,19 @@
           </a>
         <% end %>
       </div>
-      <!-- Delete link visitor_entry end -->
     </div>
 
     <dl>
       <dt>
         Visit date
       </dt>
-      <!-- Display visit_date start -->
       <dd>
         <%= @visitor_entry.visit_date %>
       </dd>
-      <!-- Display visit_date end -->
 
       <dt>
         User
       </dt>
-      <!-- Display user_id start -->
       <dd>
         <% if @visitor_entry.user.present? %>
           <a href="/users/<%= @visitor_entry.user_id %>">
@@ -53,12 +46,10 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display user_id end -->
 
       <dt>
         Book
       </dt>
-      <!-- Display book_id start -->
       <dd>
         <% if @visitor_entry.book.present? %>
           <a href="/books/<%= @visitor_entry.book_id %>">
@@ -66,28 +57,21 @@
           </a>
         <% end %>
       </dd>
-      <!-- Display book_id end -->
 
       <dt>
         Created at
       </dt>
-      <!-- Display created_at start -->
       <dd>
         <%= time_ago_in_words(@visitor_entry.created_at) %> ago
       </dd>
-      <!-- Display created_at end -->
 
       <dt>
         Updated at
       </dt>
-      <!-- Display updated_at start -->
       <dd>
         <%= time_ago_in_words(@visitor_entry.updated_at) %> ago
       </dd>
-      <!-- Display updated_at end -->
     </dl>
   </div>
 </div>
 
-<!-- Show Page Customization starts -->
-<!-- Show Page Customization end -->

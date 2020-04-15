@@ -10,26 +10,20 @@
   <ul class="list-group list-group-flush">
     <% @book.photos.each do |photo| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/photos/<%= photo.id %>">
           <%= photo.created_at %>
         </a>
-        <!-- Show link end -->
 
-        <!-- Delete link start -->
         <a href="/delete_photo_from_book/<%= photo.id %>">
           Delete
         </a>
-        <!-- Delete link end -->
 
       </li>
     <% end %>
 
     <div class="card-footer">
       <div class="collapse" id="book_photos_new_form">
-        <!-- New associationcollection form start -->
         <%= render partial: "book_templates/book_photos_new_form" %>
-        <!-- New associationcollection form end -->
       </div>
     </div>
 

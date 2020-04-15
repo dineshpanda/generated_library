@@ -10,17 +10,13 @@
   </div>
 </div>
 
-<!-- Ransack Code start -->
 <div class="row">
   <div class="col-md-12 mb-3">
     <%= render partial: "book_templates/books_search_form" %>
   </div>
 </div>
-<!-- Ransack Code end -->
 
-<!-- Location Map Code start -->
 
-<!-- Location Map Code end -->
 
 <hr>
 
@@ -58,19 +54,14 @@
 
       <% @books.each do |book| %>
       <tr>
-        <!-- Display book.id start -->
         <td>
           <%= book.id %>
         </td>
-        <!-- Display book.id end -->
 
-        <!-- Display book.name start -->
         <td>
           <%= book.name %>
         </td>
-        <!-- Display book.name end -->
 
-        <!-- Display book.author_id start -->
         <td>
           <% if book.author.present? %>
             <a href="/users/<%= book.author.id %>">
@@ -78,25 +69,18 @@
             </a>
           <% end %>
         </td>
-        <!-- Display book.author_id end -->
 
-        <!-- Display book.publish_date start -->
         <td>
           <%= book.publish_date %>
         </td>
-        <!-- Display book.publish_date end -->
 
-        <!-- Display book.created_at start -->
         <td>
           <%= time_ago_in_words(book.created_at) %> ago
         </td>
-        <!-- Display book.created_at end -->
 
-        <!-- Display book.updated_at start -->
         <td>
           <%= time_ago_in_words(book.updated_at) %> ago
         </td>
-        <!-- Display book.updated_at end -->
 
         <td>
           <a href="/books/<%= book.id %>">

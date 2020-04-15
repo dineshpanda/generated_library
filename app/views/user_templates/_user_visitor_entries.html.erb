@@ -10,11 +10,9 @@
   <ul class="list-group list-group-flush">
     <% @user.visitor_entries.each do |visitor_entry| %>
       <li class="list-group-item d-flex align-items-center justify-content-between">
-        <!-- Show link start -->
         <a href="/visitor_entries/<%= visitor_entry.id %>">
           <%= visitor_entry.visit_date %>
         </a>
-        <!-- Show link end -->
 
       </li>
     <% end %>
