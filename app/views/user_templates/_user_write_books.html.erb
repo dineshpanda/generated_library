@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Write Books
+
+    <a data-toggle="collapse" href="#user_write_books_new_form">
+      Add book
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @user.write_books.each do |book| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/books/<%= book.id %>">
+          <%= book.name %>
+        </a>
+        <!-- Show link end -->
+
+      </li>
+    <% end %>
+
+  </ul>
+</div>

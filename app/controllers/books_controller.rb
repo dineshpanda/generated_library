@@ -55,6 +55,14 @@ class BooksController < ApplicationController
     end
   end
 
+  def destroy_row_from_author
+    @book = Book.find(params.fetch("id_to_remove"))
+
+    @book.destroy
+
+    redirect_to("/users/#{@book.author_id}", notice: "Book deleted successfully.")
+  end
+
   def destroy_row
     @book = Book.find(params.fetch("id_to_remove"))
 

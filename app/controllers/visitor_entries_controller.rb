@@ -55,6 +55,22 @@ class VisitorEntriesController < ApplicationController
     end
   end
 
+  def destroy_row_from_user
+    @visitor_entry = VisitorEntry.find(params.fetch("id_to_remove"))
+
+    @visitor_entry.destroy
+
+    redirect_to("/users/#{@visitor_entry.user_id}", notice: "VisitorEntry deleted successfully.")
+  end
+
+  def destroy_row_from_book
+    @visitor_entry = VisitorEntry.find(params.fetch("id_to_remove"))
+
+    @visitor_entry.destroy
+
+    redirect_to("/books/#{@visitor_entry.book_id}", notice: "VisitorEntry deleted successfully.")
+  end
+
   def destroy_row
     @visitor_entry = VisitorEntry.find(params.fetch("id_to_remove"))
 

@@ -1,0 +1,37 @@
+<div class="card">
+  <div class="card-header d-flex align-items-center justify-content-between">
+    Visitor Entries
+
+    <a data-toggle="collapse" href="#book_visitor_entries_new_form">
+      Add visitor entry
+    </a>
+  </div>
+
+  <ul class="list-group list-group-flush">
+    <% @book.visitor_entries.each do |visitor_entry| %>
+      <li class="list-group-item d-flex align-items-center justify-content-between">
+        <!-- Show link start -->
+        <a href="/visitor_entries/<%= visitor_entry.id %>">
+          <%= visitor_entry.visit_date %>
+        </a>
+        <!-- Show link end -->
+
+        <!-- Delete link start -->
+        <a href="/delete_visitor_entry_from_book/<%= visitor_entry.id %>">
+          Delete
+        </a>
+        <!-- Delete link end -->
+
+      </li>
+    <% end %>
+
+    <div class="card-footer">
+      <div class="collapse" id="book_visitor_entries_new_form">
+        <!-- New associationcollection form start -->
+
+        <!-- New associationcollection form end -->
+      </div>
+    </div>
+
+  </ul>
+</div>
