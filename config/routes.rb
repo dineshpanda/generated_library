@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "visitor_entries#index"
   # Routes for the Photo resource:
 
   # CREATE
