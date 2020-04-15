@@ -4,6 +4,8 @@ RSpec.describe VisitorEntry, type: :model do
   
     describe "Direct Associations" do
 
+    it { should belong_to(:book) }
+
     it { should belong_to(:user) }
 
     end
