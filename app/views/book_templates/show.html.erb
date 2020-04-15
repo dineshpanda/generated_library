@@ -1,0 +1,82 @@
+<div class="row mb-3">
+  <div class="col-md-8 offset-md-2">
+    <h1>
+      Book #<%= @book.id %> details
+    </h1>
+
+    <div class="row mb-3">
+      <div class="col">
+        <a href="/books" class="btn btn-block btn-outline-secondary">
+          Go back
+        </a>
+      </div>
+
+      <!-- Edit link book start -->
+      <div class="col">
+        <a href="/books/<%= @book.id %>/edit" class="btn btn-block btn-outline-secondary">
+          Edit book
+        </a>
+      </div>
+      <!-- Edit link book end -->
+
+      <!-- Delete link book start -->
+      <div class="col">
+        <a href="/delete_book/<%= @book.id %>" class="btn btn-block btn-outline-secondary">
+          Delete book
+        </a>
+      </div>
+      <!-- Delete link book end -->
+    </div>
+
+    <dl>
+      <dt>
+        Name
+      </dt>
+      <!-- Display name start -->
+      <dd>
+        <%= @book.name %>
+      </dd>
+      <!-- Display name end -->
+
+      <dt>
+        Author
+      </dt>
+      <!-- Display author_id start -->
+      <dd>
+        <%= @book.author_id %>
+      </dd>
+      <!-- Display author_id end -->
+
+      <dt>
+        Publish date
+      </dt>
+      <!-- Display publish_date start -->
+      <dd>
+        <%= @book.publish_date %>
+      </dd>
+      <!-- Display publish_date end -->
+
+      <dt>
+        Created at
+      </dt>
+      <!-- Display created_at start -->
+      <dd>
+        <%= time_ago_in_words(@book.created_at) %> ago
+      </dd>
+      <!-- Display created_at end -->
+
+      <dt>
+        Updated at
+      </dt>
+      <!-- Display updated_at start -->
+      <dd>
+        <%= time_ago_in_words(@book.updated_at) %> ago
+      </dd>
+      <!-- Display updated_at end -->
+    </dl>
+  </div>
+</div>
+
+<!-- Show Page Customization starts -->
+
+<!-- Show Page Customization end -->

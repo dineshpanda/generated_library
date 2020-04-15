@@ -1,0 +1,56 @@
+<h1>
+  Edit book #<%= @book.id %>
+</h1>
+
+<hr>
+
+<!-- Form book start -->
+<form action="/update_book/<%= @book.id %>" method="post">
+<!-- Form book end -->
+
+  <!-- Label and input for name start -->
+  <div class="form-group">
+    <label for="name">
+      Name
+    </label>
+
+    <!-- Input for name start -->
+    <input type="text" id="name" name="name" class="form-control" value="<%= @book.name %>">
+    <!-- Input for name end -->
+  </div>
+  <!-- Label and input for name end -->
+
+  <!-- Label and input for author_id start -->
+  <div class="form-group">
+    <label for="author_id">
+      Author
+    </label>
+
+    <!-- Input for author_id start -->
+    <input type="text" id="author_id" name="author_id" class="form-control" value="<%= @book.author_id %>">
+    <!-- Input for author_id end -->
+  </div>
+  <!-- Label and input for author_id end -->
+
+  <!-- Label and input for publish_date start -->
+  <div class="form-group">
+    <label for="publish_date">
+      Publish date
+    </label>
+
+    <!-- Input for publish_date start -->
+    <input type="text" id="publish_date" name="publish_date" class="form-control" value="<%= @book.publish_date %>">
+    <!-- Input for publish_date end -->
+  </div>
+  <!-- Label and input for publish_date end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update book
+  </button>
+</form>
+
+<hr>
+
+<a href="/books">
+  Go back
+</a>
