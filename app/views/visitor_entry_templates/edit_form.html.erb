@@ -1,0 +1,56 @@
+<h1>
+  Edit visitor entry #<%= @visitor_entry.id %>
+</h1>
+
+<hr>
+
+<!-- Form visitor_entry start -->
+<form action="/update_visitor_entry/<%= @visitor_entry.id %>" method="post">
+<!-- Form visitor_entry end -->
+
+  <!-- Label and input for visit_date start -->
+  <div class="form-group">
+    <label for="visit_date">
+      Visit date
+    </label>
+
+    <!-- Input for visit_date start -->
+    <input type="text" id="visit_date" name="visit_date" class="form-control" value="<%= @visitor_entry.visit_date %>">
+    <!-- Input for visit_date end -->
+  </div>
+  <!-- Label and input for visit_date end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @visitor_entry.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for book_id start -->
+  <div class="form-group">
+    <label for="book_id">
+      Book
+    </label>
+
+    <!-- Input for book_id start -->
+    <input type="text" id="book_id" name="book_id" class="form-control" value="<%= @visitor_entry.book_id %>">
+    <!-- Input for book_id end -->
+  </div>
+  <!-- Label and input for book_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Update visitor entry
+  </button>
+</form>
+
+<hr>
+
+<a href="/visitor_entries">
+  Go back
+</a>
