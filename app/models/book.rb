@@ -12,6 +12,10 @@ class Book < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :users,
+             :through => :visitor_entries,
+             :source => :user
+
   # Validations
 
 end

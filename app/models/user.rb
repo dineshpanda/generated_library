@@ -11,6 +11,10 @@ class User < ApplicationRecord
 
   # Indirect associations
 
+  has_many   :read_books,
+             :through => :visitor_entries,
+             :source => :book
+
   # Validations
 
   # Include default devise modules. Others available are:
