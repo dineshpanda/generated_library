@@ -59,7 +59,7 @@ class VisitorEntriesController < ApplicationController
     @visitor_entry = VisitorEntry.find(params.fetch("id_to_modify"))
 
     @visitor_entry.visit_date = params.fetch("visit_date")
-    @visitor_entry.user_id = params.fetch("user_id")
+    
     @visitor_entry.book_id = params.fetch("book_id")
 
     if @visitor_entry.valid?
