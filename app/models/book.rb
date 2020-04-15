@@ -1,6 +1,9 @@
 class Book < ApplicationRecord
   # Direct associations
 
+  has_many   :photos,
+             :dependent => :destroy
+
   has_many   :visitor_entries,
              :dependent => :destroy
 
