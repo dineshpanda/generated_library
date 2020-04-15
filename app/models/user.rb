@@ -1,6 +1,9 @@
 class User < ApplicationRecord
   # Direct associations
 
+  has_many   :visitor_entries,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
