@@ -33,6 +33,22 @@ class VisitorEntriesController < ApplicationController
     end
   end
 
+  def create_row_from_book
+    @visitor_entry = VisitorEntry.new
+
+    @visitor_entry.visit_date = params.fetch("visit_date")
+    @visitor_entry.user_id = params.fetch("user_id")
+    @visitor_entry.book_id = params.fetch("book_id")
+
+    if @visitor_entry.valid?
+      @visitor_entry.save
+
+      redirect_to("/books/#{@visitor_entry.book_id}", notice: "VisitorEntry created successfully.")
+    else
+      render("visitor_entry_templates/new_form_with_errors.html.erb")
+    end
+  end
+
   def edit_form
     @visitor_entry = VisitorEntry.find(params.fetch("prefill_with_id"))
 

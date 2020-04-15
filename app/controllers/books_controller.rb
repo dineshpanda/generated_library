@@ -6,6 +6,8 @@ class BooksController < ApplicationController
   end
 
   def show
+    @photo = Photo.new
+    @visitor_entry = VisitorEntry.new
     @book = Book.find(params.fetch("id_to_display"))
 
     render("book_templates/show.html.erb")

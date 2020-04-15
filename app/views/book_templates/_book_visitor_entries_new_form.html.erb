@@ -1,0 +1,37 @@
+<!-- Form visitor_entry start -->
+<form action="/create_visitor_entry_from_book" method="post">
+<!-- Form visitor_entry end -->
+
+  <!-- Label and input for visit_date start -->
+  <div class="form-group">
+    <label for="visit_date">
+      Visit date
+    </label>
+
+    <!-- Input for visit_date start -->
+    <input type="text" id="visit_date" name="visit_date" class="form-control" value="<%= @visitor_entry.visit_date %>">
+    <!-- Input for visit_date end -->
+  </div>
+  <!-- Label and input for visit_date end -->
+
+  <!-- Label and input for user_id start -->
+  <div class="form-group">
+    <label for="user_id">
+      User
+    </label>
+
+    <!-- Input for user_id start -->
+    <input type="text" id="user_id" name="user_id" class="form-control" value="<%= @visitor_entry.user_id %>">
+    <!-- Input for user_id end -->
+  </div>
+  <!-- Label and input for user_id end -->
+
+  <!-- Label and input for book_id start -->
+  <!-- Input for book_id start -->
+  <input type="hidden" name="book_id" value="<%= @book.id %>">
+  <!-- Input for book_id end -->
+
+  <button class="btn btn-block btn-outline-secondary">
+    Create visitor entry
+  </button>
+</form>
