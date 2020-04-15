@@ -10,7 +10,7 @@ class VisitorEntriesController < ApplicationController
   end
 
   def index
-    @visitor_entries = VisitorEntry.all
+    @visitor_entries = VisitorEntry.page(params[:page]).per(10)
 
     render("visitor_entry_templates/index.html.erb")
   end
