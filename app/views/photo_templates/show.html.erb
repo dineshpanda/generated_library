@@ -43,7 +43,9 @@
       </dt>
       <!-- Display loc start -->
       <dd>
-        <%= @photo.loc %>
+        <div>
+          <%= render partial: "photo_templates/one_photo_map" %>
+        </div>
       </dd>
       <!-- Display loc end -->
 
