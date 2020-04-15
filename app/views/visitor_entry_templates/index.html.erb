@@ -68,13 +68,21 @@
 
         <!-- Display visitor_entry.user_id start -->
         <td>
-          <%= visitor_entry.user.email %>
+          <% if visitor_entry.user.present? %>
+            <a href="/users/<%= visitor_entry.user.id %>">
+              <%= visitor_entry.user.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display visitor_entry.user_id end -->
 
         <!-- Display visitor_entry.book_id start -->
         <td>
-          <%= visitor_entry.book.name %>
+          <% if visitor_entry.book.present? %>
+            <a href="/books/<%= visitor_entry.book.id %>">
+              <%= visitor_entry.book.name %>
+            </a>
+          <% end %>
         </td>
         <!-- Display visitor_entry.book_id end -->
 

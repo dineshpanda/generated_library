@@ -43,7 +43,11 @@
       </dt>
       <!-- Display author_id start -->
       <dd>
-        <%= @book.author_id %>
+        <% if @book.author.present? %>
+          <a href="/users/<%= @book.author_id %>">
+            <%= @book.author.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display author_id end -->
 

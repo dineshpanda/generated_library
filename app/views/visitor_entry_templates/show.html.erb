@@ -47,7 +47,11 @@
       </dt>
       <!-- Display user_id start -->
       <dd>
-        <%= @visitor_entry.user_id %>
+        <% if @visitor_entry.user.present? %>
+          <a href="/users/<%= @visitor_entry.user_id %>">
+            <%= @visitor_entry.user.email %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display user_id end -->
 
@@ -56,7 +60,11 @@
       </dt>
       <!-- Display book_id start -->
       <dd>
-        <%= @visitor_entry.book_id %>
+        <% if @visitor_entry.book.present? %>
+          <a href="/books/<%= @visitor_entry.book_id %>">
+            <%= @visitor_entry.book.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display book_id end -->
 

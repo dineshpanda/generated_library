@@ -68,7 +68,11 @@
 
         <!-- Display book.author_id start -->
         <td>
-          <%= book.author.email %>
+          <% if book.author.present? %>
+            <a href="/users/<%= book.author.id %>">
+              <%= book.author.email %>
+            </a>
+          <% end %>
         </td>
         <!-- Display book.author_id end -->
 

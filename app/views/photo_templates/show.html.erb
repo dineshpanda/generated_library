@@ -54,7 +54,11 @@
       </dt>
       <!-- Display book_id start -->
       <dd>
-        <%= @photo.book_id %>
+        <% if @photo.book.present? %>
+          <a href="/books/<%= @photo.book_id %>">
+            <%= @photo.book.name %>
+          </a>
+        <% end %>
       </dd>
       <!-- Display book_id end -->
 
