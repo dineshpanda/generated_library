@@ -1,4 +1,6 @@
 ActiveAdmin.register VisitorEntry do
+
+ permit_params :visit_date, :user_id, :book_id
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
