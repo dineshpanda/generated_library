@@ -10,7 +10,8 @@ class VisitorEntriesController < ApplicationController
   end
 
   def index
-    @visitor_entries = VisitorEntry.page(params[:page]).per(10)
+    @q = VisitorEntry.ransack(params[:q])
+    @visitor_entries = @q.result(:distinct => true).includes(:user, :book).page(params[:page]).per(10)
 
     render("visitor_entry_templates/index.html.erb")
   end

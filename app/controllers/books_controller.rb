@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   def index
-    @books = Book.page(params[:page]).per(10)
+    @q = Book.ransack(params[:q])
+    @books = @q.result(:distinct => true).includes(:author, :visitor_entries, :photos, :users).page(params[:page]).per(10)
 
     render("book_templates/index.html.erb")
   end
